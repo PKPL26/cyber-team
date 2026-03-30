@@ -1,55 +1,36 @@
-# Cyber Team Project
-
-This repository contains both a frontend (`fe`) built with Next.js and a backend (`be`) built with NestJS. Follow the instructions below to set up and run the project on a new computer.
-
-## Requirements
-- **Node.js**: (v18 or v20+ recommended)
-- **npm**: (comes with Node.js)
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
-### 1. Clone the repository
-First, clone the project from your version control system onto your machine:
+First, run the development server:
+
 ```bash
-git clone <repository-url> cyber-team
-cd cyber-team
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-### 2. Backend Setup (NestJS)
-The backend is located in the `be` directory.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-1. Navigate to the backend directory:
-   ```bash
-   cd be
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the development server (runs in watch mode by default at an available port, typically 3000):
-   ```bash
-   npm run start:dev
-   ```
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-> **Note**: If you encounter errors like `Cannot find module '@nestjs/mapped-types' or its corresponding type declarations.` when running the backend, run `npm install @nestjs/mapped-types` inside the `be` folder.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-### 3. Frontend Setup (Next.js)
-The frontend is located in the `fe` directory.
+## Learn More
 
-1. Open a new terminal instance and navigate to the frontend directory:
-   ```bash
-   cd fe
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the development server:
-   ```bash
-   npm run dev
-   ```
-The frontend should now be running, typically at [http://localhost:3000](http://localhost:3000) (or another port if 3000 is occupied by the backend).
+To learn more about Next.js, take a look at the following resources:
 
-## Development Notes
-- The Next.js frontend uses React 19 and Tailwind CSS v4.
-- The NestJS backend uses version 11 of the framework.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
