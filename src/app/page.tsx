@@ -4,6 +4,9 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 
 export default function Home() {
+  {
+    /* TODO: update typography */
+  }
   const fullText = "cyber-team@system:~$ build something meaningful";
   const [text, setText] = useState("");
   const [index, setIndex] = useState(0);
@@ -31,6 +34,7 @@ export default function Home() {
         </h1>
 
         {/* Subtitle */}
+        {/* TODO: update typography */}
         <p
           className="font-jetbrains text-foreground/60 text-sm md:text-lg opacity-0 animate-fade-in"
           style={{ animationDelay: "1000ms" }}

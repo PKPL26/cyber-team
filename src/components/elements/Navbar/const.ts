@@ -11,6 +11,10 @@ export const NAV_LINKS = [
         label: "dashboard",
         href: "/dashboard",
     },
+    {
+        label: "sign-out",
+        href: "/api/auth/signout",
+    },
 ];
 
 export const NAV_LINKS_AUTH = [

@@ -1,3 +1,4 @@
+// TODO: update this data
 export const TEAM_MEMBERS = [
   {
     name: "Ananda Gautama Sekar Khosmana",

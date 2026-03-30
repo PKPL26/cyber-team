@@ -11,6 +11,7 @@ export default function About() {
         >
           about-us
         </h1>
+        {/* TODO: update typography */}
         <p 
           className="opacity-0 animate-fade-in text-foreground/70 text-sm md:text-base leading-relaxed" 
           style={{ animationDelay: "400ms" }}
