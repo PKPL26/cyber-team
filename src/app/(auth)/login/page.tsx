@@ -7,7 +7,7 @@ export default function Login() {
     <section className="grid place-items-center h-screen text-lg">
       <div className="flex flex-col gap-6 w-full max-w-md">
         {/* Box */}
-        <div className="border border-foreground/20 p-6 flex flex-col gap-5 bg-background">
+        <div className="border border-foreground/20 p-6 flex flex-col gap-5 bg-background animate-fade-in transition-all">
           <h1 className="font-jetbrains font-extralight text-foreground">
             authentication-required
           </h1>
