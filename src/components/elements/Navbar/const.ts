@@ -26,8 +26,4 @@ export const NAV_LINKS_AUTH = [
         label: "sign-in",
         href: "/login",
     },
-    {
-        label: "sign-up",
-        href: "/register",
-    },
 ];
