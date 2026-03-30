@@ -66,17 +66,6 @@ export default function Login() {
               login
             </button>
           </form>
-
-          {/* Footer */}
-          <p className="font-jetbrains font-extralight text-foreground/60 text-sm text-center">
-            no account?{" "}
-            <Link
-              href="/register"
-              className="hover:text-foreground transition-colors"
-            >
-              register
-            </Link>
-          </p>
         </div>
       </div>
     </section>
