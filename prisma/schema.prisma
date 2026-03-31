@@ -73,6 +73,7 @@ model Verification {
 model SiteConfig {
   id         String   @id @default("global")
   background String   @default("grid")
+  backgroundColor String @default("#000000")
   updatedAt  DateTime @updatedAt
 
   @@map("site_config")

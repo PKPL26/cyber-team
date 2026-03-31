@@ -13,7 +13,7 @@ export default function LogoutModal({ onClose }: LogoutModalProps) {
       fetchOptions: {
         onSuccess: () => {
           onClose();
-          router.push("/login"); // adjust if needed
+          router.push("/login");
         },
       },
     });

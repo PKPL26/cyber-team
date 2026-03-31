@@ -34,6 +34,7 @@ export default async function RootLayout({
     where: { id: "global" }
   });
   const bgType = globalConfig?.background || "grid";
+  const bgColor = globalConfig?.backgroundColor || "#000000";
 
   return (
     <html
@@ -41,7 +42,7 @@ export default async function RootLayout({
       className={`${jetbrainsMono.variable} ${geistSans.variable} ${geistMono.variable}  h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Background type={bgType} />
+        <Background type={bgType} color={bgColor} />
         <Navbar />
         {children}
       </body>

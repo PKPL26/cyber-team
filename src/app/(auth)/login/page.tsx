@@ -22,12 +22,15 @@ export default function Login() {
           <form className="flex flex-col gap-5">
             {/* GOOGLE LOGIN */}
             <button
+              disabled={isLoading}
               type="button"
               onClick={handleGoogleSignIn}
               className="group border border-foreground/20
                 px-3 py-2
+                bg-foreground/5
                 hover:bg-foreground hover:text-background
                 transition-colors text-center flex items-center justify-center gap-4 hover:cursor-pointer
+                disabled:opacity-50 disabled:cursor-not-allowed
               "
             >
               <img

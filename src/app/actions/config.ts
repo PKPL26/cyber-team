@@ -35,3 +35,33 @@ export async function updateGlobalBackground(bgName: string) {
     return { success: false, error: error.message };
   }
 }
+
+export async function updateGlobalBackgroundColor(color: string) {
+  try {
+    const session = await auth.api.getSession({
+      headers: await headers(),
+    });
+
+    if (!session || !session.user || !session.user.email) {
+      throw new Error("Unauthorized");
+    }
+
+    const adminEmails = process.env.ADMIN_EMAILS?.split(",") || [];
+    if (!adminEmails.includes(session.user.email)) {
+      throw new Error("Forbidden: You are not an admin.");
+    }
+
+    await prisma.siteConfig.upsert({
+      where: { id: "global" },
+      update: { backgroundColor: color },
+      create: { id: "global", backgroundColor: color },
+    });
+
+    revalidatePath("/", "layout");
+
+    return { success: true };
+  } catch (error: any) {
+    console.error("Failed to set background color:", error);
+    return { success: false, error: error.message };
+  }
+}
