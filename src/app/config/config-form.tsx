@@ -23,6 +23,15 @@ export default function ConfigForm({
 }) {
   const [isPending, startTransition] = useTransition();
   const [localColor, setLocalColor] = useState(currentBgColor);
+  const colors = [
+    "#2f1313",
+    "#2f2313",
+    "#2d2f13",
+    "#132b2f",
+    "#15132f",
+    "#2f132f",
+    "#0a0a0a",
+  ]
 
   const handleSelect = (bgId: string) => {
     startTransition(async () => {
@@ -36,6 +45,7 @@ export default function ConfigForm({
   const handleColorUpdate = (color: string) => {
     startTransition(async () => {
       const response = await updateGlobalBackgroundColor(color);
+      setLocalColor(color);
       if (!response.success) {
         alert(response.error);
       }
@@ -44,15 +54,18 @@ export default function ConfigForm({
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-3">
         <p className="text-foreground/60 text-sm">background color</p>
-        <input
-          type="color"
-          value={localColor}
-          onChange={(e) => setLocalColor(e.target.value)}
-          onBlur={() => handleColorUpdate(localColor)}
-          className="aspect-video h-10"
-        />
+        <div className="flex gap-3">
+          {colors.map((color) => (
+            <button
+              key={color}
+              onClick={() => handleColorUpdate(color)}
+              className={`w-10 h-10 rounded-full border border-foreground/20 ${color === localColor ? "outline-2 outline-offset-3 outline-foreground" : ""}`}
+              style={{ backgroundColor: color }}
+            />
+          ))}
+        </div>
       </div>
       <div className="flex flex-col gap-2">
         <p className="text-foreground/60 text-sm">background</p>
