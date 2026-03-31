@@ -1,25 +1,17 @@
 "use client";
 import Link from "next/link";
 import { NAV_LINKS, NAV_LINKS_AUTH } from "./const";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { authClient } from "../../../lib/auth-client";
+import { useState } from "react";
+import LogoutModal from "../../ui/logout-modal";
 
 export default function Navbar() {
   const path = usePathname();
-  const router = useRouter();
   const { data: session } = authClient.useSession();
+  const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false);
   
   const links = session ? NAV_LINKS : NAV_LINKS_AUTH;
-
-  const handleSignOut = async () => {
-    await authClient.signOut({
-      fetchOptions: {
-        onSuccess: () => {
-          router.push("/login");
-        },
-      },
-    });
-  };
 
   return (
     <nav className="flex justify-between items-center w-full py-4 px-14 fixed z-50">
@@ -34,7 +26,7 @@ export default function Navbar() {
             return (
               <button 
                 key={link.label} 
-                onClick={handleSignOut} 
+                onClick={() => setIsLogoutModalOpen(true)} 
                 className={`hover:text-foreground transition-colors hover:border-b-2 hover:cursor-pointer`}
               >
                 {link.label}
@@ -49,6 +41,7 @@ export default function Navbar() {
           )
         })}
       </ul>
+      {isLogoutModalOpen && <LogoutModal onClose={() => setIsLogoutModalOpen(false)} />}
     </nav>
   );
 }
