@@ -24,13 +24,13 @@ export default function Navbar() {
           
           if (link.label === "sign-out") {
             return (
-              <button 
+              <span 
                 key={link.label} 
                 onClick={() => setIsLogoutModalOpen(true)} 
                 className={`hover:text-foreground transition-colors hover:border-b-2 hover:cursor-pointer`}
               >
                 {link.label}
-              </button>
+              </span>
             )
           }
 

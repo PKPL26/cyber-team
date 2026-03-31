@@ -23,7 +23,7 @@ export default function LogoutModal({ onClose }: LogoutModalProps) {
     <div className="fixed inset-0 z-100 grid place-items-center w-screen h-screen">
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-background/50 backdrop-blur-sm"
+        className="absolute inset-0 bg-background/80"
         onClick={onClose}
       />
 

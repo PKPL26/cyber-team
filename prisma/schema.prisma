@@ -69,3 +69,11 @@ model Verification {
   @@index([identifier])
   @@map("verification")
 }
+
+model SiteConfig {
+  id         String   @id @default("global")
+  background String   @default("grid")
+  updatedAt  DateTime @updatedAt
+
+  @@map("site_config")
+}

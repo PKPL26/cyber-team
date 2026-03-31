@@ -8,6 +8,10 @@ export const NAV_LINKS = [
         href: "/about",
     },
     {
+        label: "config",
+        href: "/config",
+    },
+    {
         label: "sign-out",
         href: "/api/auth/signout",
     },
