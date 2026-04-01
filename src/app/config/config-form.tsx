@@ -56,12 +56,12 @@ export default function ConfigForm({
     <div className="flex flex-col gap-4">
       <div className="flex flex-col gap-3">
         <p className="text-foreground/60 text-sm">background color</p>
-        <div className="flex gap-3">
+        <div className="flex justify-between w-full">
           {colors.map((color) => (
             <button
               key={color}
               onClick={() => handleColorUpdate(color)}
-              className={`w-10 h-10 rounded-full border border-foreground/20 ${color === localColor ? "outline-2 outline-offset-3 outline-foreground" : ""}`}
+              className={`h-10 aspect-square border border-foreground/20 hover:cursor-pointer  transition-all ${color === localColor ? "outline-2 outline-offset-3 outline-foreground" : "hover:outline"}`}
               style={{ backgroundColor: color }}
             />
           ))}
@@ -76,11 +76,11 @@ export default function ConfigForm({
               disabled={isPending}
               onClick={() => handleSelect(bg.id)}
               className={`
-              w-full text-left px-4 py-3 transition-colors 
+              w-full text-left px-4 py-3 transition-colors hover:cursor-pointer
               ${
                 currentBg === bg.id
                   ? "bg-foreground text-background font-medium"
-                  : "bg-foreground/5 hover:bg-foreground/10 text-foreground"
+                  : "bg-foreground/5 hover:bg-foreground/10 text-foreground hover:outline"
               }
               disabled:opacity-50 disabled:cursor-not-allowed
             `}
